@@ -12,7 +12,7 @@ const validateObjectId = (req, res, next) => {
     const objectIdRegex = /^[0-9a-fA-F]{24}$/;
 
     if (!objectIdRegex.test(id)) {
-        console.log(`[MESSAGE] ❌ Invalid ObjectId format: ${id}`);
+        console.log(`[MESSAGE] Invalid ObjectId format: ${id}`);
         return res.status(400).json({
             success: false,
             message: 'Invalid user ID format',

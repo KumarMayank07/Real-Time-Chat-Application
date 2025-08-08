@@ -6,22 +6,36 @@ const app = express();
 const server = http.createServer(app);
 
 const io = new Server(server, {
-    cors: {
-        origin: [
-            'http://localhost:5173',
-            'http://localhost:5174',
-            'http://localhost:3000',
-            // Production URLs
-            process.env.FRONTEND_URL,
-            // Allow common deployment platforms
-            /^https:\/\/.*\.onrender\.com$/,
-            /^https:\/\/.*\.vercel\.app$/,
-            /^https:\/\/.*\.netlify\.app$/
-        ].filter(Boolean),
-        credentials: true,
-        methods: ['GET', 'POST']
+  cors: {
+    origin: (origin, callback) => {
+      const allowedOrigins = [
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://localhost:3000",
+        process.env.FRONTEND_URL,
+      ];
+
+      const regexOrigins = [
+        /^https:\/\/.*\.onrender\.com$/,
+        /^https:\/\/.*\.vercel\.app$/,
+        /^https:\/\/.*\.netlify\.app$/,
+      ];
+
+      const isAllowed =
+        allowedOrigins.includes(origin) ||
+        regexOrigins.some((regex) => regex.test(origin));
+
+      if (isAllowed || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
     },
+    credentials: true,
+    methods: ["GET", "POST"],
+  },
 });
+
 
 const userSocketMap = {};
 
