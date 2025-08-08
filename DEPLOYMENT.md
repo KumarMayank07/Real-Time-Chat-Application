@@ -1,8 +1,8 @@
-# 🚀 Chatty Deployment Guide
+# Messagify Deployment Guide
 
-This guide covers deploying the Chatty chat application to various platforms. The application consists of a React frontend and Node.js backend that need to be deployed separately.
+This guide covers deploying the Messagify chat application to various platforms. The application consists of a React frontend and Node.js backend that need to be deployed separately.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [Environment Variables](#environment-variables)
@@ -11,16 +11,16 @@ This guide covers deploying the Chatty chat application to various platforms. Th
 - [Database Setup](#database-setup)
 - [Troubleshooting](#troubleshooting)
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before deploying, ensure you have:
 
-- ✅ **MongoDB Atlas account** (for database)
-- ✅ **Cloudinary account** (for image uploads)
-- ✅ **GitHub repository** with your code
-- ✅ **Domain name** (optional, for custom domains)
+- **MongoDB Atlas account** (for database)
+- **Cloudinary account** (for image uploads)
+- **GitHub repository** with your code
+- **Domain name** (optional, for custom domains)
 
-## 🔧 Environment Variables
+## Environment Variables
 
 ### Backend Environment Variables
 
@@ -30,7 +30,7 @@ Create these environment variables in your deployment platform:
 # Required
 NODE_ENV=production
 PORT=10000
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/chatty
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/messagify
 JWT_SECRET=your-super-secret-jwt-key-minimum-32-characters
 
 # Cloudinary (Required for image uploads)
@@ -47,7 +47,7 @@ VITE_API_URL=https://your-backend-domain.com
 VITE_SOCKET_URL=https://your-backend-domain.com
 ```
 
-## 🖥️ Backend Deployment
+## Backend Deployment
 
 ### Option 1: Render (Recommended)
 
@@ -59,7 +59,7 @@ VITE_SOCKET_URL=https://your-backend-domain.com
 
 2. **Configure Service**
    ```yaml
-   Name: chatty-backend
+   Name: Messagify-backend
    Runtime: Node
    Build Command: npm install
    Start Command: npm start
@@ -72,7 +72,7 @@ VITE_SOCKET_URL=https://your-backend-domain.com
 4. **Deploy**
    - Click "Create Web Service"
    - Wait for deployment to complete
-   - Note the service URL (e.g., `https://chatty-backend.onrender.com`)
+   - Note the service URL (e.g., `https://messagify-backend.onrender.com`)
 
 ### Option 2: Railway
 
@@ -91,7 +91,7 @@ VITE_SOCKET_URL=https://your-backend-domain.com
 
 1. **Create App**
    ```bash
-   heroku create chatty-backend
+   heroku create Messagify-backend
    heroku config:set NODE_ENV=production
    heroku config:set JWT_SECRET=your-secret
    # Add other environment variables
@@ -102,7 +102,7 @@ VITE_SOCKET_URL=https://your-backend-domain.com
    git subtree push --prefix backend heroku main
    ```
 
-## 🌐 Frontend Deployment
+## Frontend Deployment
 
 ### Option 1: Vercel (Recommended)
 
@@ -170,7 +170,7 @@ VITE_SOCKET_URL=https://your-backend-domain.com
    firebase deploy
    ```
 
-## 🗄️ Database Setup
+## Database Setup
 
 ### MongoDB Atlas
 
@@ -186,10 +186,10 @@ VITE_SOCKET_URL=https://your-backend-domain.com
 
 3. **Connection String Format**
    ```
-   mongodb+srv://username:password@cluster.mongodb.net/chatty?retryWrites=true&w=majority
+   mongodb+srv://username:password@cluster.mongodb.net/messagify?retryWrites=true&w=majority
    ```
 
-## 🔧 Deployment Checklist
+## Deployment Checklist
 
 ### Before Deployment
 
@@ -224,7 +224,7 @@ VITE_SOCKET_URL=https://your-backend-domain.com
 - [ ] Test on mobile devices
 - [ ] Set up custom domain (optional)
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -275,7 +275,7 @@ const socket = io('https://your-backend-domain.com', {
    - Verify MongoDB Atlas IP whitelist
    - Check connection string format
 
-## 📞 Support
+## Support
 
 If you encounter issues:
 
@@ -286,4 +286,4 @@ If you encounter issues:
 
 ---
 
-**Happy Deploying! 🚀**
+**Happy Deploying! **

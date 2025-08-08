@@ -1,44 +1,44 @@
-# 💬 Chatty - Real-time Chat Application
+# Messagify - Real-time Chat Application
 
 A modern, full-stack real-time chat application built with React, Node.js, Socket.IO, and MongoDB. Features secure authentication, instant messaging, file sharing, and comprehensive error handling.
 
-## 🌟 Overview
+## Overview
 
-Chatty is a production-ready chat application that demonstrates modern web development practices with real-time communication capabilities. The application consists of a React frontend and a Node.js backend, connected through Socket.IO for real-time messaging.
+Messagify is a production-ready chat application that demonstrates modern web development practices with real-time communication capabilities. The application consists of a React frontend and a Node.js backend, connected through Socket.IO for real-time messaging.
 
-## ✨ Key Features
+## Key Features
 
-### 🔐 **Authentication & Security**
+### **Authentication & Security**
 - JWT-based authentication with HTTP-only cookies
 - Secure password hashing with bcrypt
 - Protected routes and middleware validation
 - CORS configuration and security headers
 
-### 💬 **Real-time Messaging**
+### **Real-time Messaging**
 - Instant messaging with Socket.IO
 - Online user tracking and status indicators
 - Message persistence in MongoDB
 - Real-time user presence updates
 
-### 📱 **Modern UI/UX**
+### **Modern UI/UX**
 - Responsive design for all devices
 - Dark/Light theme support with DaisyUI
 - Smooth animations and transitions
 - Intuitive user interface
 
-### 🖼️ **File Sharing**
+### **File Sharing**
 - Image upload and sharing with Cloudinary
 - Profile picture management
 - Image preview and optimization
 - File type validation
 
-### 🛡️ **Enterprise-level Error Handling**
+### **Enterprise-level Error Handling**
 - Comprehensive error logging with structured messages
 - User-friendly error notifications
 - Network error detection and recovery
 - Detailed debugging information
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React 18** - Modern UI library
@@ -58,7 +58,7 @@ Chatty is a production-ready chat application that demonstrates modern web devel
 - **Cloudinary** - Cloud-based image management
 - **bcrypt** - Password hashing
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Node.js (v16 or higher)
@@ -68,7 +68,7 @@ Chatty is a production-ready chat application that demonstrates modern web devel
 ### 1. Clone the Repository
 ```bash
 git clone <repository-url>
-cd chatty
+cd Real-Time-ChatApp
 ```
 
 ### 2. Backend Setup
@@ -90,13 +90,13 @@ npm run dev
 ```
 
 ### 4. Access the Application
-- **Frontend**: https://chatty-real-time-chat-app-green.vercel.app/
-- **Backend**: https://chatty-real-time-chat-app-ciu4.onrender.com
+- **Frontend**: https://messagify-real-time-chat-app-green.vercel.app/
+- **Backend**: https://messagify-real-time-chat-app-ciu4.onrender.com
 
 ## 📁 Project Structure
 
 ```
-chatty/
+Real-Time-ChatApp/
 ├── backend/                 # Node.js backend
 │   ├── src/
 │   │   ├── controllers/     # Route handlers
@@ -121,13 +121,13 @@ chatty/
 └── README.md               # This file
 ```
 
-## 🔧 Environment Configuration
+## Environment Configuration
 
 ### Backend (.env)
 ```env
 PORT=5001
 NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/chatty
+MONGODB_URI=mongodb://localhost:27017/messagify
 JWT_SECRET=your-super-secret-jwt-key
 CLOUDINARY_CLOUD_NAME=your-cloud-name
 CLOUDINARY_API_KEY=your-api-key
@@ -140,7 +140,7 @@ VITE_API_URL=http://localhost:5001
 VITE_SOCKET_URL=http://localhost:5001
 ```
 
-## 📡 API Documentation
+## API Documentation
 
 ### Authentication Endpoints
 - `POST /api/auth/signup` - Register new user
@@ -157,13 +157,6 @@ VITE_SOCKET_URL=http://localhost:5001
 ### Socket Events
 - `getOnlineUsers` - Receive list of online users
 - `newMessage` - Receive new messages in real-time
-
-## 🎥 Demo Video
-
-
-
-https://github.com/user-attachments/assets/0adf52d8-c1e2-4ab3-896c-97f4ab36ed6a
-
 
 
 > **Application Features:**
@@ -182,7 +175,7 @@ https://github.com/user-attachments/assets/0adf52d8-c1e2-4ab3-896c-97f4ab36ed6a
 > 5. Error handling scenarios
 > 6. Performance and scalability features
 
-## 🛡️ Security Features
+## Security Features
 
 - **JWT Authentication** with secure HTTP-only cookies
 - **Password Hashing** using bcrypt with salt rounds
@@ -191,7 +184,7 @@ https://github.com/user-attachments/assets/0adf52d8-c1e2-4ab3-896c-97f4ab36ed6a
 - **Protected Routes** with authentication middleware
 - **Error Handling** without exposing sensitive information
 
-## 🚀 Deployment
+## Deployment
 
 ### Backend Deployment
 1. Set up MongoDB Atlas or cloud database
@@ -205,7 +198,7 @@ https://github.com/user-attachments/assets/0adf52d8-c1e2-4ab3-896c-97f4ab36ed6a
 3. Configure environment variables for production API URLs
 4. Set up custom domain and SSL certificates
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please follow these steps:
 
@@ -222,11 +215,11 @@ We welcome contributions! Please follow these steps:
 - Test your changes thoroughly
 - Update documentation as needed
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Socket.IO** for real-time communication
 - **MongoDB** for flexible data storage

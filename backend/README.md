@@ -1,4 +1,4 @@
-# Chatty Backend - Real-time Chat Application API
+# Messagify Backend - Real-time Chat Application API
 
 A robust Node.js backend API for a real-time chat application built with Express.js, Socket.IO, and MongoDB. Features comprehensive authentication, real-time messaging, file uploads, and enterprise-level error handling.
 
@@ -98,9 +98,9 @@ PORT=5001
 NODE_ENV=development
 
 # Database
-MONGODB_URI=mongodb://localhost:27017/chatty
+MONGODB_URI=mongodb://localhost:27017/messagify
 # OR for MongoDB Atlas:
-# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/chatty
+# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/messagify
 
 # JWT Configuration
 JWT_SECRET=your-super-secret-jwt-key-here

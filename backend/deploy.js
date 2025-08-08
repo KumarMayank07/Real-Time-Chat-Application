@@ -14,7 +14,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-console.log('Chatty Backend - Deployment Check');
+console.log("Messagify Backend - Deployment Check");
 
 // Check Node.js version
 const nodeVersion = process.version;

@@ -1,4 +1,4 @@
-# 💬 Chatty Frontend - Real-time Chat Application
+# Messagify Frontend - Real-time Chat Application
 
 A modern, responsive React frontend for a real-time chat application. Built with React, Vite, Tailwind CSS, and Socket.IO client for seamless real-time communication.
 

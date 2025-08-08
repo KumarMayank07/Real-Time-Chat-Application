@@ -1,9 +1,9 @@
-# Render Deployment Configuration for Chatty App
+# Render Deployment Configuration for Messagify App
 
 services:
   # Backend Service (Node.js API)
   - type: web
-    name: chatty-backend
+    name: Messagify-backend
     runtime: node
     plan: free
     buildCommand: npm install
@@ -15,7 +15,7 @@ services:
         value: 10000
       - key: MONGODB_URI
         fromDatabase:
-          name: chatty-mongodb
+          name: Messagify-mongodb
           property: connectionString
       - key: JWT_SECRET
         generateValue: true
@@ -29,7 +29,7 @@ services:
     
   # Frontend Service (React App)
   - type: web
-    name: chatty-frontend
+    name: Messagify-frontend
     runtime: static
     plan: free
     buildCommand: npm install && npm run build
@@ -37,13 +37,13 @@ services:
     pullRequestPreviewsEnabled: true
     envVars:
       - key: VITE_API_URL
-        value: https://chatty-backend.onrender.com
+        value: https://messagify-backend.onrender.com
       - key: VITE_SOCKET_URL
-        value: https://chatty-backend.onrender.com
+        value: https://messagify-backend.onrender.com
 
 # 🗄️ Database
 databases:
-  - name: chatty-mongodb
-    databaseName: chatty
-    user: chatty_user
+  - name: messagify-mongodb
+    databaseName: messagify
+    user: messagify_user
     plan: free
