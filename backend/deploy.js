@@ -10,6 +10,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { readFile } from "fs/promises";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -46,10 +47,7 @@ requiredEnvVars.forEach(envVar => {
 // Check package.json scripts
 console.log('\nPackage.json Scripts:');
 try {
-  const packageJson = JSON.parse(
-    await import('fs').then(fs => 
-      fs.promises.readFile(path.join(__dirname, 'package.json'), 'utf8')
-    )
+  const packageJson = JSON.parse(await readFile(path.join(__dirname, 'package.json'), 'utf8')
   );
   
   const requiredScripts = ['start', 'build'];
