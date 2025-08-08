@@ -6,22 +6,20 @@
  * This script helps verify that the backend is properly configured
  * for deployment and can catch common issues before deployment.
  */
-
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { readFile } from "fs/promises";
+import { readFile } from 'fs/promises';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 console.log("Messagify Backend - Deployment Check");
 
-// Check Node.js version
-const nodeVersion = process.version;
-console.log(`Node.js version: ${nodeVersion}`);
+// 1) Node.js version
+console.log(`Node.js version: ${process.version}`);
 
-// Check environment variables
+// 2) Env vars
 console.log('\nEnvironment Variables:');
 const requiredEnvVars = [
   'NODE_ENV',
@@ -30,82 +28,44 @@ const requiredEnvVars = [
   'JWT_SECRET',
   'CLOUDINARY_CLOUD_NAME',
   'CLOUDINARY_API_KEY',
-  'CLOUDINARY_API_SECRET'
+  'CLOUDINARY_API_SECRET',
+  'FRONTEND_URL'
 ];
-
-let missingEnvVars = [];
-
-requiredEnvVars.forEach(envVar => {
-  if (process.env[envVar]) {
-    console.log(`${envVar}: Set`);
-  } else {
-    console.log(`${envVar}: Missing`);
-    missingEnvVars.push(envVar);
-  }
+const missing = requiredEnvVars.filter(k => !process.env[k]);
+requiredEnvVars.forEach(k => {
+  console.log(`  ${k}: ${process.env[k] ? 'okay' : 'missing'}`);
 });
 
-// Check package.json scripts
-console.log('\nPackage.json Scripts:');
+// 3) package.json scripts
+console.log('\npackage.json Scripts:');
+let pkg;
 try {
-  const packageJson = JSON.parse(await readFile(path.join(__dirname, 'package.json'), 'utf8')
-  );
-  
-  const requiredScripts = ['start', 'build'];
-  requiredScripts.forEach(script => {
-    if (packageJson.scripts && packageJson.scripts[script]) {
-      console.log(`${script}: ${packageJson.scripts[script]}`);
-    } else {
-      console.log(`${script}: Missing`);
-    }
+  pkg = JSON.parse(await readFile(path.join(__dirname, 'package.json'), 'utf8'));
+  ['start'].forEach(s => {
+    console.log(`  ${s}: ${pkg.scripts?.[s] ? pkg.scripts[s] : 'missing'}`);
   });
-} catch (error) {
+} catch {
   console.log('Could not read package.json');
 }
 
-// Check route definitions
+// 4) Route validation
 console.log('\nRoute Validation:');
-try {
-  // Test route parameter patterns
-  const testRoutes = [
-    '/api/auth/signup',
-    '/api/auth/login',
-    '/api/auth/logout',
-    '/api/auth/check',
-    '/api/message/users',
-    '/api/message/507f1f77bcf86cd799439011', // Valid ObjectId
-    '/api/message/send/507f1f77bcf86cd799439011'
-  ];
-  
-  console.log('Route patterns validated');
-  testRoutes.forEach(route => {
-    console.log(`   - ${route}`);
-  });
-} catch (error) {
-  console.log('Route validation failed:', error.message);
-}
+[
+  '/api/auth/signup',
+  '/api/auth/login',
+  '/api/auth/logout',
+  '/api/auth/check',
+  '/api/messages/users',
+  '/api/messages/507f1f77bcf86cd799439011',
+  '/api/messages/send/507f1f77bcf86cd799439011'
+].forEach(r => console.log(`  - ${r}`));
 
-// Summary
+// 5) Summary
 console.log('\nSummary:');
-if (missingEnvVars.length === 0) {
-  console.log('All environment variables are set');
-} else {
-  console.log(`Missing ${missingEnvVars.length} environment variables:`);
-  missingEnvVars.forEach(envVar => {
-    console.log(`   - ${envVar}`);
-  });
-}
-
-console.log('\nDeployment Checklist:');
-console.log('Set all required environment variables');
-console.log('Ensure MongoDB Atlas is configured');
-console.log('Verify Cloudinary credentials');
-console.log('Update CORS origins for production');
-console.log('Test API endpoints after deployment');
-
-if (missingEnvVars.length > 0) {
-  console.log('\nPlease set missing environment variables before deploying');
+if (missing.length) {
+  console.log(`Missing ${missing.length} env vars:`, missing.join(', '));
   process.exit(1);
 } else {
-  console.log('\nBackend is ready for deployment!');
+  console.log('All required env vars are set');
   process.exit(0);
 }
