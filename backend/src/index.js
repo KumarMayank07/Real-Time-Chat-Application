@@ -84,12 +84,9 @@ app.get('/health', (req, res) => {
 });
 
 // API 404 handler - must come before static files
-app.use('/api/*', (req, res) => {
-  res.status(404).json({
-    success: false,
-    message: 'API endpoint not found',
-    error: 'NOT_FOUND'
-  });
+// Catch anything _under_ /api that wasn't handled above
+app.use('/api', (req, res) => {
+  res.status(404).json({ success: false, message: 'API endpoint not found', error: 'NOT_FOUND' });
 });
 
 // Global error handler

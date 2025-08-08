@@ -81,14 +81,16 @@ try {
 console.log('Adding catch-all route...');
 try {
   // Try different catch-all patterns
-  app.get('/*', (req, res) => {
-    if (req.path.startsWith('/api/')) {
-      return res.status(404).json({ error: 'API endpoint not found' });
+  app.get("*", (req, res) => {
+    // If it was meant to be an API call, return 404:
+    if (req.path.startsWith("/api/")) {
+      return res.status(404).json({ error: "API endpoint not found" });
     }
-    res.json({ message: 'Catch-all route', path: req.path });
+    // Otherwise this is the SPA/fallback path:
+    res.json({ message: "Catch-all route", path: req.path });
   });
+  console.log("Catch-all route added successfully");
   
-  console.log('Catch-all route added successfully');
 } catch (error) {
   console.error('Error adding catch-all route:', error.message);
   console.error('Stack trace:', error.stack);
