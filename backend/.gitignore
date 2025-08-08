@@ -1,0 +1,247 @@
+# 🚫 Chatty Backend - Node.js .gitignore
+
+# ========================
+# 🔐 Environment Variables
+# ========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Keep example file for reference
+!.env.example
+
+# ========================
+# 📁 Dependencies
+# ========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ========================
+# 📊 Logs
+# ========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ========================
+# 🔧 Runtime Data
+# ========================
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ========================
+# 📂 Coverage & Testing
+# ========================
+lib-cov/
+coverage/
+.nyc_output/
+.coverage/
+*.lcov
+.jest/
+
+# ========================
+# 🏗️ Build & Distribution
+# ========================
+build/
+dist/
+out/
+
+# ========================
+# 🗃️ Database Files
+# ========================
+*.db
+*.sqlite
+*.sqlite3
+data/
+db/
+dumps/
+
+# ========================
+# 🔑 Security & Certificates
+# ========================
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+.secrets/
+ssl/
+certs/
+
+# ========================
+# 📦 Package Manager Files
+# ========================
+.npm/
+.eslintcache
+.node_repl_history
+.yarn-integrity
+.pnp.*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# ========================
+# 🔍 IDE & Editors
+# ========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ========================
+# 🖥️ OS Generated Files
+# ========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ========================
+# 🐳 Docker
+# ========================
+Dockerfile.dev
+docker-compose.dev.yml
+.dockerignore
+
+# ========================
+# ☁️ Cloud & Deployment
+# ========================
+.vercel/
+.netlify/
+.railway/
+.heroku/
+
+# ========================
+# 📊 Monitoring & Analytics
+# ========================
+.sentry/
+newrelic_agent.log
+
+# ========================
+# 🔄 Version Control
+# ========================
+.git/
+
+# ========================
+# 🧪 Testing
+# ========================
+test-results/
+coverage/
+.nyc_output/
+
+# ========================
+# 📁 Uploads & Media
+# ========================
+uploads/
+public/uploads/
+static/uploads/
+media/
+images/
+files/
+
+# ========================
+# 🔧 Tool-specific
+# ========================
+
+# Nodemon
+nodemon.json
+
+# PM2
+ecosystem.config.js
+.pm2/
+
+# Serverless
+.serverless/
+
+# AWS
+.aws/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# ========================
+# 📝 Documentation
+# ========================
+docs/build/
+.docusaurus/
+
+# ========================
+# 🎯 Miscellaneous
+# ========================
+*.tgz
+*.tar.gz
+.temp/
+.tmp/
+temp/
+tmp/
+
+# ========================
+# 🔒 Session & Cache
+# ========================
+sessions/
+.cache/
+
+# ========================
+# 📧 Email Templates (if using)
+# ========================
+email-templates/build/
+
+# ========================
+# 🧹 Backup Files
+# ========================
+*.orig
+*.rej
+*.bak
+*.backup
+*~
+
+# ========================
+# 🔧 Configuration Overrides
+# ========================
+config/local.js
+config/local.json
+config/production.js
+config/production.json
+
+# ========================
+# 📊 Performance & Profiling
+# ========================
+.clinic/
+profile/
+*.cpuprofile
+*.heapprofile
+*.heapsnapshot
+
+# ========================
+# 🌐 API Documentation
+# ========================
+api-docs/
+swagger-ui/
+redoc/
+
+# ========================
+# 🔐 JWT & Auth
+# ========================
+private.key
+public.key
+jwt-private.pem
+jwt-public.pem

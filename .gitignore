@@ -1,0 +1,229 @@
+# 🚫 Chatty - Main Project .gitignore
+
+# ========================
+# 🔐 Environment Variables
+# ========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.example
+
+# ========================
+# 📁 Dependencies
+# ========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ========================
+# 🏗️ Build Outputs
+# ========================
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist/
+
+# ========================
+# 📊 Logs
+# ========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ========================
+# 🔧 Runtime & Cache
+# ========================
+.cache/
+.parcel-cache/
+.npm/
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# ========================
+# 🧪 Testing
+# ========================
+coverage/
+*.lcov
+.nyc_output/
+.coverage/
+.jest/
+
+# ========================
+# 🔍 IDE & Editors
+# ========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ========================
+# 🐳 Docker
+# ========================
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+.dockerignore
+
+# ========================
+# ☁️ Cloud & Deployment
+# ========================
+.vercel/
+.netlify/
+.firebase/
+.aws/
+
+# ========================
+# 🔑 Security & Secrets
+# ========================
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+.secrets/
+
+# ========================
+# 📱 Mobile
+# ========================
+*.ipa
+*.apk
+*.aab
+
+# ========================
+# 🗃️ Database
+# ========================
+*.db
+*.sqlite
+*.sqlite3
+data/
+db/
+
+# ========================
+# 📦 Package Managers
+# ========================
+.pnp.*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.js
+
+# ========================
+# 🔄 Version Control
+# ========================
+.git/
+.gitattributes
+
+# ========================
+# 📝 Documentation
+# ========================
+docs/build/
+.docusaurus/
+
+# ========================
+# 🎯 Miscellaneous
+# ========================
+*.tgz
+*.tar.gz
+*.zip
+*.rar
+*.7z
+.temp/
+.tmp/
+temp/
+tmp/
+
+# ========================
+# 🖼️ Media Files (Optional)
+# ========================
+# Uncomment if you don't want to track large media files
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.bmp
+# *.tiff
+# *.svg
+# *.ico
+# *.mp4
+# *.avi
+# *.mov
+# *.wmv
+# *.flv
+# *.webm
+# *.mp3
+# *.wav
+# *.flac
+# *.aac
+
+# ========================
+# 🔧 Tool-specific
+# ========================
+
+# Webpack
+.webpack/
+
+# Rollup
+.rollup.cache/
+
+# Vite
+.vite/
+
+# ESBuild
+.esbuild/
+
+# Turborepo
+.turbo/
+
+# Nx
+.nx/cache/
+
+# Rush
+common/temp/
+
+# Storybook
+.storybook/build/
+storybook-static/
+
+# ========================
+# 🌐 Browser Extensions
+# ========================
+web-ext-artifacts/
+
+# ========================
+# 📊 Analytics & Monitoring
+# ========================
+.sentry/
+
+# ========================
+# 🧹 Cleanup
+# ========================
+*.orig
+*.rej
+*.bak
+*.backup
+*~
