@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 
 const getBaseURL = () => {
     if (import.meta.env.MODE === "development") {
-        return "http://localhost:5001/api";
+        return "http://localhost:4000/api";
     }
 
     // In production, use environment variable

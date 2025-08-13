@@ -102,8 +102,8 @@ Create a `.env` file in the root directory:
 
 ```env
 # Development
-VITE_API_URL=http://localhost:5001
-VITE_SOCKET_URL=http://localhost:5001
+VITE_API_URL=http://localhost:4000
+VITE_SOCKET_URL=http://localhost:4000
 
 # Production (optional)
 VITE_API_URL=https://your-backend-domain.com
